@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
+import Loader from './components/Loader';
 
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       infoRawPotter: [],
+      loading: true,
     }
   }
 
@@ -23,6 +25,7 @@ class App extends Component {
         );
         this.setState({
           infoRawPotter: newDataWithId,
+          loading: false,
         })
       })
   }
@@ -37,20 +40,23 @@ class App extends Component {
         <main className="main">
           <label htmlFor="character" />
           <input type="text" id="character" placeholder="Escribe el nombre de tu personaje favorito"></input>
-          <ul className="list__characters">
-            {infoRawPotter.map(character => {
-              return <li key={character.id} className="character">
-                <img src={character.image} alt={character.name} />
-                <h2 className="character__name">{character.name}</h2>
-                <p className="character__home">{character.house}</p>
-              </li>
-            }
-            )}
-          </ul>
+          {this.state.loading ? (
+            <Loader />
+          ) : (
+              <ul className="list__characters">
+                {infoRawPotter.map(character => {
+                  return <li key={character.id} className="character">
+                    <img src={character.image} alt={character.name} />
+                    <h2 className="character__name">{character.name}</h2>
+                    <p className="character__home">{character.house}</p>
+                  </li>
+                })}
+              </ul>
+              )}
         </main>
       </div>
-    );
-  }
-}
-
-export default App;
+        );
+      }
+    }
+    
+    export default App;
