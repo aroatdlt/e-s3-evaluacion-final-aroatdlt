@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
-import Loader from './components/Loader';
 import Filters from './components/Filters';
+import CharacterList from './components/CharacterList';
 
 
 class App extends Component {
@@ -54,7 +54,6 @@ class App extends Component {
   }
 
   render() {
-    const filterCharacter = this.filterResults();
     return (
       <div className="App">
         <header className="header">
@@ -63,19 +62,7 @@ class App extends Component {
 
         <main className="main">
         <Filters searchedInfo={this.searchedInfo} />
-          {this.state.loading ? (
-            <Loader />
-          ) : (
-              <ul className="list__characters">
-                {filterCharacter.map(character => {
-                  return <li key={character.id} className="character">
-                    <img src={character.image} alt={character.name} />
-                    <h2 className="character__name">{character.name}</h2>
-                    <p className="character__home">{character.house}</p>
-                  </li>
-                })}
-              </ul>
-              )}
+        <CharacterList loading={this.state.loading} filterResults={this.filterResults}/>
         </main>
       </div>
         );
