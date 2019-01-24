@@ -3,6 +3,8 @@ import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
 import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
+import { Route, Switch } from 'react-router-dom'; 
+import Detail from './components/Detail';
 
 
 class App extends Component {
@@ -54,6 +56,11 @@ class App extends Component {
     return filteredResults;
   }
 
+  getCharacter(id) {
+    const { infoRawPotter } = this.state;
+    return infoRawPotter.find(character => character.id === parseInt(id));
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,7 +69,24 @@ class App extends Component {
         </header>
         <main className="main">
           <Filters searchedInfo={this.searchedInfo} />
-          <CharacterList loading={this.state.loading} filterResults={this.filterResults} />
+          <Switch>
+            <Route exact 
+            path="/"
+            render={props =>
+              <CharacterList 
+              loading={this.state.loading}
+              filterResults={this.filterResults} />
+            }
+            />
+            <Route 
+              path='/:id'
+              render={props =>
+              <Detail {...props}
+                characterInfo={this.getCharacter(props.match.params.id)}
+                />
+              }
+            />
+          </Switch>
         </main>
       </div>
     );
