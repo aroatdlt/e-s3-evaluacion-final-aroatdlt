@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
 import Loader from './components/Loader';
+import Filters from './components/Filters';
 
 
 class App extends Component {
@@ -59,9 +60,9 @@ class App extends Component {
         <header className="header">
           <h1 className="title">Personajes de Harry Potter</h1>
         </header>
+
         <main className="main">
-          <label htmlFor="character" />
-          <input type="text" id="character" placeholder="Escribe el nombre de tu personaje favorito" onKeyUp={this.searchedInfo}></input>
+        <Filters searchedInfo={this.searchedInfo} />
           {this.state.loading ? (
             <Loader />
           ) : (
