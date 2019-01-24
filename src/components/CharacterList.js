@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loader from './Loader';
+import CharacterCard from './CharacterCard';
 
 class CharacterList extends Component {
     render() {
@@ -12,10 +13,13 @@ class CharacterList extends Component {
                 ) : (
                         <ul className="list__characters">
                             {filterCharacter.map(character => {
-                                return <li key={character.id} className="character">
-                                    <img src={character.image} alt={character.name} />
-                                    <h2 className="character__name">{character.name}</h2>
-                                    <p className="character__home">{character.house}</p>
+                                return <li 
+                                key={character.id} className="character">
+                                    <CharacterCard 
+                                    image={character.image}
+                                    name={character.name}
+                                    house={character.house}
+                                    />
                                 </li>
                             })}
                         </ul>

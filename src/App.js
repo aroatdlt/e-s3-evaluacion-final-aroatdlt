@@ -35,21 +35,22 @@ class App extends Component {
       });
   }
 
-  searchedInfo(event){
+  searchedInfo(event) {
     const inputValue = event.currentTarget.value;
     const finalInputValue = inputValue.toLowerCase()
-    .split(' ')
-    .map((s)=> s.charAt(0).toUpperCase() + s.substring(1))
-    .join(' ');
+      .split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ');
     this.setState({
       query: finalInputValue
     })
   }
 
-  filterResults(){
+  filterResults() {
     const filteredResults = this.state.infoRawPotter.filter(character => {
-      return((character.name.includes(this.state.query))? true : false
-    )})
+      return ((character.name.includes(this.state.query)) ? true : false
+      )
+    })
     return filteredResults;
   }
 
@@ -61,12 +62,12 @@ class App extends Component {
         </header>
 
         <main className="main">
-        <Filters searchedInfo={this.searchedInfo} />
-        <CharacterList loading={this.state.loading} filterResults={this.filterResults}/>
+          <Filters searchedInfo={this.searchedInfo} />
+          <CharacterList loading={this.state.loading} filterResults={this.filterResults} />
         </main>
       </div>
-        );
-      }
-    }
-    
-    export default App;
+    );
+  }
+}
+
+export default App;
