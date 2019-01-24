@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loader from './Loader';
 import CharacterCard from './CharacterCard';
+import PropTypes from 'prop-types';
 
 class CharacterList extends Component {
     render() {
@@ -27,6 +28,11 @@ class CharacterList extends Component {
             </React.Fragment>
         );
     }
+}
+
+CharacterList.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    filterResults: PropTypes.func.isRequired,
 }
 
 export default CharacterList;
