@@ -60,7 +60,6 @@ class App extends Component {
         <header className="header">
           <h1 className="title">Personajes de Harry Potter</h1>
         </header>
-
         <main className="main">
           <Filters searchedInfo={this.searchedInfo} />
           <CharacterList loading={this.state.loading} filterResults={this.filterResults} />
