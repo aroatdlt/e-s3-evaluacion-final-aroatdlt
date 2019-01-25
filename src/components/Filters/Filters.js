@@ -4,11 +4,18 @@ import PropTypes from "prop-types";
 
 class Filters extends Component {
     render() {
-        const { searchedInfo } = this.props;
+        const { searchedInfo, query } = this.props;
         return (
             <div className="input__container">
                 <label htmlFor="character" />
-                <input className="input__search"type="text" id="character" placeholder="Escribe el nombre de tu personaje favorito" onKeyUp={searchedInfo}></input>
+                <input 
+                className="input__search"
+                type="text" 
+                id="character" 
+                placeholder="Escribe el nombre de tu personaje favorito" 
+                onChange={searchedInfo}
+                value={query}
+                ></input>
             </div>
         );
     }

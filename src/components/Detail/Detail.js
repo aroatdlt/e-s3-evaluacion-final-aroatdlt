@@ -33,16 +33,16 @@ class Detail extends Component {
 }
 
 Detail.propTypes = {
-    characterInfo: PropTypes.objectOf(
+    characterInfo: 
         PropTypes.shape({
             name: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
-            house: PropTypes.string.isRequired,
+            house: PropTypes.object.isRequired,
             yearOfBirth: PropTypes.number.isRequired,
             patronus: PropTypes.string.isRequired,
-            alive: PropTypes.string.isRequired
+            alive: PropTypes.object.isRequired
         })
-    )
+
 }
 
 export default Detail;

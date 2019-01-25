@@ -8,11 +8,14 @@ import { Link } from 'react-router-dom';
 
 class CharacterList extends Component {
     render() {
-        const { loading, filterResults, searchedInfo } = this.props;
+        const { loading, filterResults, searchedInfo, query } = this.props;
         const filterCharacter = filterResults();
         return (
             <React.Fragment>
-                <Filters searchedInfo={searchedInfo} />
+                <Filters 
+                searchedInfo={searchedInfo}
+                query={query}
+                />
                 {loading ? (
                     <Loader />
                 ) : (

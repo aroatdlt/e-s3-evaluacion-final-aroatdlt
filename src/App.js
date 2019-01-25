@@ -94,7 +94,8 @@ class App extends Component {
                 <CharacterList
                   loading={this.state.loading}
                   filterResults={this.filterResults}
-                  searchedInfo={this.searchedInfo} />
+                  searchedInfo={this.searchedInfo}
+                  query={this.state.query} />
               }
             />
             <Route

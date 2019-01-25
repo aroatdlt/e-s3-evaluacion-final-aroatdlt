@@ -18,7 +18,7 @@ class CharacterCard extends Component {
 CharacterCard.propTypes = {
     image: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired
+    house: PropTypes.object.isRequired
 }
 
 CharacterCard.defaultProps = {
