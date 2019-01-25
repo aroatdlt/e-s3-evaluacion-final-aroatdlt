@@ -1,7 +1,9 @@
 
 .link__back{
+    display: inline-block;
     color: black;
     font-size: 20px;
+    margin: 20px 0 20px 30px;
 }
 
 .character__info--card {
@@ -39,4 +41,39 @@
 .character__home--detail{
     display: flex;
     flex-direction: column;
+}
+
+@media all and (max-width: 768px){
+    .character__info--complete{
+        padding: 40px 20px;
+        margin: auto;
+    }
+
+    .character__info--card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80%;
+        margin:0;
+    }
+
+    .character__image--detail{
+        width: 125px;
+        height: 175px;
+    }
+
+    .character__name--detail{
+        font-size: 25px;
+    }
+    
+    .character__home--detail{
+        width: 80px;
+        height: 80px;
+    }
+
+    .character__birthday .character__patronus .character__live .character__home{
+        display: inline-block;
+        font-size: 20px;
+    }
+    
 }
