@@ -4,6 +4,11 @@ import { fetchHarry } from './services/InfoAllCharacters';
 import CharacterList from './components/CharacterList';
 import { Route, Switch } from 'react-router-dom';
 import Detail from './components/Detail';
+import Gryffindor from './images/Gryffindorcrest.jpg';
+import Slytherin from './images/Slytherin5.jpg';
+import Hufflepuff from './images/Hufflepuffcrest.jpg';
+import Ravenclaw from './images/Ravenclawcrest.jpg';
+
 
 
 class App extends Component {
@@ -22,12 +27,22 @@ class App extends Component {
   componentDidMount() {
     fetchHarry()
       .then(data => {
-        const newDataWithId = data.map((character, index, live) => {
-          ((character.alive === true) ? live = "Vivo" : live = "Muerto")
+        const newDataWithId = data.map((character, index, live, newHouse) => {
+          ((character.alive === true) ? live = <i class="fas fa-heartbeat"></i> : live = <i class="fas fa-skull-crossbones"></i>)
+          if (character.house === "Gryffindor"){
+            newHouse = <img src={Gryffindor} alt={character.house}/>
+          } else if (character.house === "Slytherin"){
+            newHouse = <img src={Slytherin} alt={character.house}/>
+          } else if (character.house === "Ravenclaw") {
+            newHouse = <img src={Ravenclaw} alt={character.house}/>
+          } else if (character.house === "Hufflepuff") {
+            newHouse = <img src={Hufflepuff} alt={character.house}/>
+          }
           return {
             ...character,
             id: index,
-            alive: live
+            alive: live,
+            house: newHouse
           }
         }
         );

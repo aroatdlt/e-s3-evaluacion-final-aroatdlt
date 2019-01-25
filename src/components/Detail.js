@@ -6,7 +6,7 @@ class Detail extends Component {
     render() {
         if (!this.props.characterInfo) {
             return (
-                <p>Este hechizo se está invocando...</p>
+                <p className="loader__detail">Este hechizo se está invocando...</p>
             )
         } else {
             const { name, image, house, yearOfBirth, patronus, alive } = this.props.characterInfo;
