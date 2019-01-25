@@ -10,7 +10,7 @@
 
 .header{
     min-height: 20vh;
-    width: 100%;
+    //width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
 }
 
 .logo__title{
-    width: 30%;
+    width: 40%;
 }
 
 .title{
@@ -30,3 +30,16 @@
     padding-bottom: 10px;
 }
 
+.main{
+    padding-right: 40px;
+}
+
+@media all and (max-width: 768px){
+    .logo__title{
+        margin-top: 20px;
+    }
+    .title{
+        font-size: 25px;
+        margin-top: 30px;
+    }
+}
