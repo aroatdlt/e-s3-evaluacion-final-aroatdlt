@@ -3,7 +3,7 @@ import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
 import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
-import { Route, Switch } from 'react-router-dom'; 
+import { Route, Switch } from 'react-router-dom';
 import Detail from './components/Detail';
 
 
@@ -23,10 +23,12 @@ class App extends Component {
   componentDidMount() {
     fetchHarry()
       .then(data => {
-        const newDataWithId = data.map((character, index) => {
+        const newDataWithId = data.map((character, index, live) => {
+          ((character.alive === true) ? live = "Vivo" : live = "Muerto")
           return {
             ...character,
             id: index,
+            alive: live
           }
         }
         );
@@ -65,24 +67,26 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1 className="title">Personajes de Harry Potter</h1>
+          <img className="logo__title"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Harry_Potter_wordmark.svg/2180px-Harry_Potter_wordmark.svg.png" alt="Harry Potter" />
+          <h1 className="title">Enciclopedia de personajes</h1>
         </header>
         <main className="main">
           <Filters searchedInfo={this.searchedInfo} />
           <Switch>
-            <Route exact 
-            path="/"
-            render={props =>
-              <CharacterList 
-              loading={this.state.loading}
-              filterResults={this.filterResults} />
-            }
+            <Route exact
+              path="/"
+              render={props =>
+                <CharacterList
+                  loading={this.state.loading}
+                  filterResults={this.filterResults} />
+              }
             />
-            <Route 
+            <Route
               path='/:id'
               render={props =>
-              <Detail {...props}
-                characterInfo={this.getCharacter(props.match.params.id)}
+                <Detail {...props}
+                  characterInfo={this.getCharacter(props.match.params.id)}
                 />
               }
             />
