@@ -5,38 +5,38 @@
 }
 
 .character__info--card {
-    width: 80vw;
+    width: 80%;
     height: 55vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 300px;
     margin: auto;
-    padding-top: 30px;
+    padding: 30px;
     box-shadow: 10px 10px 5px -5px rgb(102, 153, 153);
     border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .character__image--detail{
-    grid-column: 1/span 1;
-    grid-row: 1/span 2;
     width: 200px;
     height: 300px;
-    margin: 20px 10px 20px 15px;
+    margin: 0 10px;
 }
 
 .character__name--detail{
-    grid-column: 2/span 1;
     font-size: 30px;
+    font-weight: 900;
 }
 .character__info--complete{
-    grid-column: 2/span 1;
     list-style: none;
     font-size: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding: 0;
+    margin-left: 30px;
 }
 
-.character__birthday{}
-.character__patronus{}
-.character__live{}
+.character__home--detail{
+    display: flex;
+    flex-direction: column;
+}

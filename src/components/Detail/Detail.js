@@ -18,8 +18,8 @@ class Detail extends Component {
                     <Link to="/" className="link__back">Busca otro personaje aquí</Link>
                     <div className="character__info--card">
                         <img src={image} alt={name} className="character__image--detail" />
-                        <h2 className="character__name--detail">{name}</h2>
                         <ul className="character__info--complete">
+                            <li className="character__name--detail">{name}</li>
                             <li className="character__birthday">Nacimiento: {yearOfBirth}</li>
                             <li className="character__patronus">Patronus: {patronus}</li>
                             <li className="character__live">Estado: {alive}</li>
@@ -33,7 +33,7 @@ class Detail extends Component {
 }
 
 Detail.propTypes = {
-    characterInfo: 
+    characterInfo:
         PropTypes.shape({
             name: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
