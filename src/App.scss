@@ -76,22 +76,51 @@
 
 .link__character{
     text-decoration: none;
+    color: black;
+    font-weight: 400;
 }
 
 //Card
-
 .character__image{
     width: 175px;
     height: 250px;
 }
-.character__name{}
+.character__name{
+}
 .character__home{}
 
 //Details
 
-.link__back{}
-.character__name--detail{}
-.character__info--complete{}
+.link__back{
+    color: black;
+    font-size: 20px;
+}
+
+.character__info--card {
+    width: 80vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 200px;
+    margin: auto;
+    padding-top: 30px;
+}
+.character__image--detail{
+    grid-column: 1/span 1;
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+}
+
+.character__name--detail{
+    grid-column: 2/span 1;
+    font-size: 30px;
+}
+.character__info--complete{
+    grid-column: 2/span 1;
+    list-style: none;
+    font-size: 20px;
+}
 .character__house{}
 .character__birthday{}
 .character__patronus{}

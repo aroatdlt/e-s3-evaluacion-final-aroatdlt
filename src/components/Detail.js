@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Detail extends Component {
     render() {
-        if(!this.props.characterInfo){
+        if (!this.props.characterInfo) {
             return (
                 <p>Este hechizo se está invocando...</p>
             )
@@ -12,9 +12,9 @@ class Detail extends Component {
             const { name, image, house, yearOfBirth, patronus, alive } = this.props.characterInfo;
             return (
                 <React.Fragment>
+                    <Link to="/" className="link__back">Busca otro personaje aquí</Link>
                     <div className="character__info--card">
-                    <Link to="/" className="link__back">Busca otro personaje</Link>
-                        <img src={image} alt={name} className="character__image--detail"/>
+                        <img src={image} alt={name} className="character__image--detail" />
                         <h2 className="character__name--detail">{name}</h2>
                         <ul className="character__info--complete">
                             <li className="character__house">Casa: {house}</li>
@@ -24,7 +24,6 @@ class Detail extends Component {
                         </ul>
                     </div>
                 </React.Fragment>
-                
             );
         }
     }
