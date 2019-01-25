@@ -14,7 +14,7 @@ class App extends Component {
       infoRawPotter: [],
       loading: true,
       query: "",
-      filter: [],
+      characterData: [],
     }
     this.searchedInfo = this.searchedInfo.bind(this);
     this.filterResults = this.filterResults.bind(this);
