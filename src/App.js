@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
-import Filters from './components/Filters';
 import CharacterList from './components/CharacterList';
 import { Route, Switch } from 'react-router-dom';
 import Detail from './components/Detail';
@@ -72,14 +71,15 @@ class App extends Component {
           <h1 className="title">Enciclopedia de personajes</h1>
         </header>
         <main className="main">
-          <Filters searchedInfo={this.searchedInfo} />
+          
           <Switch>
             <Route exact
               path="/"
               render={props =>
                 <CharacterList
                   loading={this.state.loading}
-                  filterResults={this.filterResults} />
+                  filterResults={this.filterResults}
+                  searchedInfo={this.searchedInfo} />
               }
             />
             <Route

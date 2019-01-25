@@ -6,7 +6,7 @@ class CharacterCard extends Component {
         const { image, name, house }=this.props;
         return (
             <React.Fragment>
-                <img src={image} alt={name} />
+                <img src={image} alt={name} className="character__image" />
                 <h2 className="character__name">{name}</h2>
                 <p className="character__home">{house}</p>
             </React.Fragment>

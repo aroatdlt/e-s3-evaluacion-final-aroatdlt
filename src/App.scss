@@ -1,5 +1,98 @@
+* body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    font-size: 16px;
+    font-family: 'Sofia', cursive;
+    font-weight: 400;
+}
+
 //Título
+.App {
+    height: 100vh;
+    width: 100vw;
+    
+}
+.header{
+    min-height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: url("images/background.jpg");
+    background-size: cover;
+}
 
 .logo__title{
-    width: 40%;
+    max-width: 50vh;
 }
+
+.title{
+    font-size: 35px;
+}
+
+.main {
+    height: 80vh;
+    margin: 20px;
+}
+
+//lista
+.loader{
+    font-size: 30px;
+}
+
+.input__container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.input__search{
+    width: 50%;
+    height: 20px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 20px;
+}
+
+.input__search:focus{
+    background-color: #d1e0e0;
+    color: white;
+    font-weight: 900;
+}
+
+.list__characters{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.character{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.link__character{
+    text-decoration: none;
+}
+
+//Card
+
+.character__image{
+    width: 175px;
+    height: 250px;
+}
+.character__name{}
+.character__home{}
+
+//Details
+
+.link__back{}
+.character__name--detail{}
+.character__info--complete{}
+.character__house{}
+.character__birthday{}
+.character__patronus{}
+.character__live{}

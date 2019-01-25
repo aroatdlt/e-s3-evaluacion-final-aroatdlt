@@ -6,16 +6,16 @@ class Detail extends Component {
     render() {
         if(!this.props.characterInfo){
             return (
-                <p>Este hechizo no ha funcionado</p>
+                <p>Este hechizo se está invocando...</p>
             )
         } else {
             const { name, image, house, yearOfBirth, patronus, alive } = this.props.characterInfo;
             return (
                 <React.Fragment>
                     <div className="character__info--card">
-                    <Link to="/">Busca otro personaje</Link>
-                        <img src={image} alt={name}/>
-                        <h2 className="character__name">{name}</h2>
+                    <Link to="/" className="link__back">Busca otro personaje</Link>
+                        <img src={image} alt={name} className="character__image--detail"/>
+                        <h2 className="character__name--detail">{name}</h2>
                         <ul className="character__info--complete">
                             <li className="character__house">Casa: {house}</li>
                             <li className="character__birthday">Nacimiento: {yearOfBirth}</li>
