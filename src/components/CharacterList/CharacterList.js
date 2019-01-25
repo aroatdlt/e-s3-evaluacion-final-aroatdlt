@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Loader from './Loader';
-import CharacterCard from './CharacterCard';
-import Filters from './Filters';
+import './characterlist.scss';
+import Loader from '../Loader/Loader';
+import CharacterCard from '../CharacterCard/CharacterCard';
+import Filters from '../Filters/Filters';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 

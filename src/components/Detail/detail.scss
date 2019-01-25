@@ -1,0 +1,42 @@
+
+.link__back{
+    color: black;
+    font-size: 20px;
+}
+
+.character__info--card {
+    width: 80vw;
+    height: 55vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 300px;
+    margin: auto;
+    padding-top: 30px;
+    box-shadow: 10px 10px 5px -5px rgb(102, 153, 153);
+    border-radius: 6px;
+}
+
+.character__image--detail{
+    grid-column: 1/span 1;
+    grid-row: 1/span 2;
+    width: 200px;
+    height: 300px;
+    margin: 20px 10px 20px 15px;
+}
+
+.character__name--detail{
+    grid-column: 2/span 1;
+    font-size: 30px;
+}
+.character__info--complete{
+    grid-column: 2/span 1;
+    list-style: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.character__birthday{}
+.character__patronus{}
+.character__live{}

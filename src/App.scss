@@ -8,7 +8,6 @@
     font-weight: 400;
 }
 
-//Título
 .App {
     height: 100vh;
     width: 100vw;
@@ -17,6 +16,7 @@
 .header{
     min-height: 20vh;
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,90 +38,4 @@
     margin: 20px;
 }
 
-//lista
-.loader{
-    font-size: 30px;
-}
 
-.input__container{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-.input__search{
-    width: 50%;
-    height: 20px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    margin: 20px;
-}
-
-.input__search:focus{
-    background-color: #d1e0e0;
-    color: white;
-    font-weight: 900;
-}
-
-.list__characters{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
-}
-
-.character{
-    text-decoration: none;
-    list-style-type: none;
-}
-
-.link__character{
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-}
-
-//Card
-.character__image{
-    width: 175px;
-    height: 250px;
-}
-.character__name{
-}
-.character__home{}
-
-//Details
-
-.link__back{
-    color: black;
-    font-size: 20px;
-}
-
-.character__info--card {
-    width: 80vw;
-    height: 50vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 200px;
-    margin: auto;
-    padding-top: 30px;
-}
-.character__image--detail{
-    grid-column: 1/span 1;
-    width: 250px;
-    height: 350px;
-    margin: 10px;
-}
-
-.character__name--detail{
-    grid-column: 2/span 1;
-    font-size: 30px;
-}
-.character__info--complete{
-    grid-column: 2/span 1;
-    list-style: none;
-    font-size: 20px;
-}
-.character__house{}
-.character__birthday{}
-.character__patronus{}
-.character__live{}

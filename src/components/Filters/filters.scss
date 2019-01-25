@@ -1,0 +1,19 @@
+.input__container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.input__search{
+    width: 50%;
+    height: 20px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin: 20px;
+}
+
+.input__search:focus{
+    background-color: #d1e0e0;
+    color: white;
+    font-weight: 900;
+}

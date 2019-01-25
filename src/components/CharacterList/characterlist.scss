@@ -1,0 +1,16 @@
+.list__characters{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.character{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.link__character{
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}

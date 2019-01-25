@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './detail.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -6,7 +7,9 @@ class Detail extends Component {
     render() {
         if (!this.props.characterInfo) {
             return (
-                <p className="loader__detail">Este hechizo se está invocando...</p>
+                <React.Fragment>
+                    <p className="loader__detail">Este hechizo se está invocando...</p>
+                </React.Fragment>
             )
         } else {
             const { name, image, house, yearOfBirth, patronus, alive } = this.props.characterInfo;
@@ -17,10 +20,10 @@ class Detail extends Component {
                         <img src={image} alt={name} className="character__image--detail" />
                         <h2 className="character__name--detail">{name}</h2>
                         <ul className="character__info--complete">
-                            <li className="character__house">Casa: {house}</li>
                             <li className="character__birthday">Nacimiento: {yearOfBirth}</li>
                             <li className="character__patronus">Patronus: {patronus}</li>
                             <li className="character__live">Estado: {alive}</li>
+                            <li className="character__home--detail">Casa: {house}</li>
                         </ul>
                     </div>
                 </React.Fragment>

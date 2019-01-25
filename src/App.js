@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { fetchHarry } from './services/InfoAllCharacters';
-import CharacterList from './components/CharacterList';
+import CharacterList from './components/CharacterList/CharacterList';
 import { Route, Switch } from 'react-router-dom';
-import Detail from './components/Detail';
+import Detail from './components/Detail/Detail';
 import Gryffindor from './images/Gryffindorcrest.jpg';
 import Slytherin from './images/Slytherin5.jpg';
 import Hufflepuff from './images/Hufflepuffcrest.jpg';
@@ -28,15 +28,15 @@ class App extends Component {
     fetchHarry()
       .then(data => {
         const newDataWithId = data.map((character, index, live, newHouse) => {
-          ((character.alive === true) ? live = <i class="fas fa-heartbeat"></i> : live = <i class="fas fa-skull-crossbones"></i>)
+          ((character.alive === true) ? live = <i className="fas fa-heartbeat"></i> : live = <i className="fas fa-skull-crossbones"></i>)
           if (character.house === "Gryffindor"){
-            newHouse = <img src={Gryffindor} alt={character.house}/>
+            newHouse = <img className="character__home"src={Gryffindor} alt={character.house}/>
           } else if (character.house === "Slytherin"){
-            newHouse = <img src={Slytherin} alt={character.house}/>
+            newHouse = <img className="character__home" src={Slytherin} alt={character.house}/>
           } else if (character.house === "Ravenclaw") {
-            newHouse = <img src={Ravenclaw} alt={character.house}/>
+            newHouse = <img className="character__home" src={Ravenclaw} alt={character.house}/>
           } else if (character.house === "Hufflepuff") {
-            newHouse = <img src={Hufflepuff} alt={character.house}/>
+            newHouse = <img className="character__home" src={Hufflepuff} alt={character.house}/>
           }
           return {
             ...character,
